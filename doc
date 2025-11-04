@@ -1,0 +1,15 @@
+Install dependency:
+
+go get github.com/joho/godotenv
+
+Install driver:
+
+go get github.com/go-sql-driver/mysql
+
+go run ./cmd/server/main.go
+
+Recommendation
+
+সবসময় project root থেকে path সহ run করুন:
+
+go run ./cmd/server
