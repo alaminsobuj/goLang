@@ -9,21 +9,22 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func Connect(cfg *config.Config) *sql.DB {
+// package-level exported DB
+var DB *sql.DB
+
+func Connect(cfg *config.Config) {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true",
 		cfg.DBUser, cfg.DBPassword, cfg.DBHost, cfg.DBPort, cfg.DBName)
 
-	db, err := sql.Open("mysql", dsn)
+	var err error
+	DB, err = sql.Open("mysql", dsn)
 	if err != nil {
 		log.Fatal("Database Connection Error: ", err)
 	}
 
-	err = db.Ping()
-	if err != nil {
+	if err := DB.Ping(); err != nil {
 		log.Fatal("DB Ping Failed: ", err)
 	}
 
 	log.Println("✅ Database Connected")
-
-	return db
 }

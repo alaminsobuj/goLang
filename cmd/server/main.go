@@ -18,8 +18,10 @@ import (
 func main() {
 	cfg := config.MustLoad()
 	logg := logger.New()
-	database := db.Connect(cfg)
-	_ = database // you can use it later
+	// Connect to database (global db.DB will be initialized)
+	db.Connect(cfg)
+	// database := db.Connect(cfg)
+	// _ = database // you can use it later
  
 	r := http.NewServeMux()
 	// r = http.NewServeMux()

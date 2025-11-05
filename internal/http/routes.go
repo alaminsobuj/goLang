@@ -12,5 +12,6 @@ func NewRouter() *http.ServeMux {
 		// Example additional route
 	r.HandleFunc("/hello", HelloHandler)
 	r.HandleFunc("/users", uc.Index)
+	r.HandleFunc("/user-store", uc.user_store)
 	return r
 }
