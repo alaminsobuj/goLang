@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/alaminsobuj8/goLang/internal/config"
+	"github.com/alaminsobuj/goLang/internal/config"
 	_ "github.com/go-sql-driver/mysql"
 )
 

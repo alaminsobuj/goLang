@@ -9,10 +9,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/alaminsobuj8/goLang/internal/config"
-	"github.com/alaminsobuj8/goLang/internal/db"
-	appHttp "github.com/alaminsobuj8/goLang/internal/http"
-	"github.com/alaminsobuj8/goLang/pkg/logger"
+	"github.com/alaminsobuj/goLang/internal/config"
+	"github.com/alaminsobuj/goLang/internal/db"
+	appHttp "github.com/alaminsobuj/goLang/internal/http"
+	"github.com/alaminsobuj/goLang/pkg/logger"
 )
 
 func main() {
