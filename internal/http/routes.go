@@ -13,5 +13,6 @@ func NewRouter() *http.ServeMux {
 	r.HandleFunc("/hello", HelloHandler)
 	r.HandleFunc("/users", uc.Index)
 	r.HandleFunc("/user-store", uc.user_store)
+	r.HandleFunc("/UserUpdate", uc.UserUpdate)
 	return r
 }

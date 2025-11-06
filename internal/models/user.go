@@ -1,6 +1,8 @@
 package models
 
-import "github.com/alaminsobuj/goLang/internal/db"
+import (
+	"github.com/alaminsobuj/goLang/internal/db"
+)
 
 type User struct {
 	ID    int    `json:"id"`
@@ -29,5 +31,10 @@ func GetAllUsers() ([]User, error) {
 
 func InsertUser(name, email string) error {
 	_, err := db.DB.Exec("INSERT INTO users(name,email) VALUES(?,?)", name, email)
+	return err
+}
+func UpdateUser(name, email string, id int) error {
+	query := "UPDATE users SET name=?, email=? WHERE id=?"
+	_, err := db.DB.Exec(query, name, email, id) // ✅ use db directly
 	return err
 }
